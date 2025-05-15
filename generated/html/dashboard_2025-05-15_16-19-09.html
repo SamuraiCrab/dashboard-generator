@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOPORTE TÉCNICO E INFRAESTRUCTURA</title>
+    <style>
+        /* Variables de color */
+        :root {
+            --primary-color: #1e3a5c;
+            --secondary-color: #f6ba3c;
+            --tertiary-color: #5bc2c1;
+            --light-color: #f7f9fc;
+            --text-color: #fff;
+            --dark-text: #1e3a5c;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+            --light-gray: #e9e9e9;
+            --app-color: #795548;
+            --correo-color: #e91e63;
+            --wfm-color: var(--tertiary-color);
+            --usuario-color: var(--warning-color);
+            --internet-color: #9c27b0;
+            --medica-color: var(--success-color);
+            --vpn-color: #5a6acf;
+            --portal-color: #3f51b5;
+            --terceria-color: #009688;
+            --dms-color: #607d8b;
+            --citas-color: #ff5722;
+            --beneficiario-color: #2196f3;
+            --historial-color: #673ab7;
+            --recetas-color: #8bc34a;
+            --videollamada-color: #00bcd4;
+        }
+        
+        /* Estilos generales para formato de página */
+        @page {
+            size: A4;
+            margin: 1.5cm;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-size: 11px;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 15px;
+            box-sizing: border-box;
+            min-height: 100vh;
+        }
+        
+        /* Estilos del encabezado */
+        .header {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .header h2 {
+            margin: 8px 0 0;
+            color: var(--primary-color);
+            font-size: 16px;
+            font-weight: normal;
+        }
+        
+        /* Secciones principales */
+        .section {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            color: white;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            color: var(--secondary-color);
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        /* Fila de gráficos/contenido */
+        .chart-row {
+            display: flex;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        /* Contenedores de gráficos */
+        .chart-container {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 10px;
+            flex: 1;
+            min-width: 280px;
+        }
+        
+        .chart-title {
+            font-size: 14px;
+            margin: 0 0 10px 0;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Tablas */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+        }
+        
+        .data-table th {
+            background-color: var(--light-gray);
+            color: var(--dark-text);
+            padding: 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 9px;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .data-table td {
+            padding: 5px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 9px;
+        }
+        
+        .data-table td:last-child {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        /* Gráficos de donut */
+        .donut-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 5px 0;
+            min-height: 250px;
+        }
+        
+        .donut-chart {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+        }
+        
+        .donut-hole {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            font-size: 18px;
+        }
+        
+        /* Leyenda */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 8px;
+            font-size: 9px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 8px 6px 0;
+        }
+        
+        .legend-color {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            margin-right: 4px;
+        }
+        
+        /* Gráficos de barras */
+        .bar-chart-container {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            min-height: 250px;
+        }
+        
+        .bar-chart {
+            height: 200px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            padding-top: 15px;
+            padding-bottom: 30px;
+            position: relative;
+        }
+        
+        .bar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        
+        .bar {
+            width: 40px;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .bar:hover {
+            opacity: 1;
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .bar-label {
+            margin-top: 8px;
+            font-size: 10px;
+            text-align: center;
+            color: white;
+            max-width: 60px;
+            word-wrap: break-word;
+        }
+        
+        .grid-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .grid-line-label {
+            position: absolute;
+            left: -35px;
+            top: -8px;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Estilos para impresión */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="header">
+            <h1>SOPORTE TÉCNICO E INFRAESTRUCTURA</h1>
+            <h2>Primera Quincena Mayo 2025</h2>
+        </div><div class="section"><h2 class="section-title">test</h2><div class="chart-container"><h3 class="chart-title">Comparativa por Estados</h3><div class="bar-chart-container"><div class="bar-chart"><div class="grid-line" style="bottom: 0%;"><div class="grid-line-label">0</div></div><div class="grid-line" style="bottom: 20%;"><div class="grid-line-label">31</div></div><div class="grid-line" style="bottom: 40%;"><div class="grid-line-label">62</div></div><div class="grid-line" style="bottom: 60%;"><div class="grid-line-label">93</div></div><div class="grid-line" style="bottom: 80%;"><div class="grid-line-label">124</div></div><div class="grid-line" style="bottom: 100%;"><div class="grid-line-label">155</div></div><div class="bar-item"><div class="bar" style="height: 100%; background-color: #3f51b5;"><div class="bar-value">155</div></div><div class="bar-label">hora</div></div><div class="bar-item"><div class="bar" style="height: 56.774193548387%; background-color: #ff9800;"><div class="bar-value">88</div></div><div class="bar-label">12</div></div><div class="bar-item"><div class="bar" style="height: 35.483870967742%; background-color: #5bc2c1;"><div class="bar-value">55</div></div><div class="bar-label">16</div></div></div></div></div></div><div class="section"><h2 class="section-title">tessttt</h2><div class="chart-row"><div class="chart-container"><h3 class="chart-title">horas</h3><table class="data-table"><tr><th>#</th><th>Estado</th><th>Cantidad</th><th>Tiempo Promedio (Días)</th></tr><tr><td>1</td><td>12</td><td>2</td><td>4.00</td></tr><tr><td>2</td><td>43</td><td>6</td><td>23.00</td></tr><tr><td>3</td><td>15</td><td>1</td><td>0.00</td></tr></table></div><div class="chart-container"><h3 class="chart-title">Comparativa por Estados</h3><div class="bar-chart-container"><div class="bar-chart"><div class="grid-line" style="bottom: 0%;"><div class="grid-line-label">0</div></div><div class="grid-line" style="bottom: 20%;"><div class="grid-line-label">1</div></div><div class="grid-line" style="bottom: 40%;"><div class="grid-line-label">2</div></div><div class="grid-line" style="bottom: 60%;"><div class="grid-line-label">4</div></div><div class="grid-line" style="bottom: 80%;"><div class="grid-line-label">5</div></div><div class="grid-line" style="bottom: 100%;"><div class="grid-line-label">6</div></div><div class="bar-item"><div class="bar" style="height: 33.333333333333%; background-color: #3f51b5;"><div class="bar-value">2</div></div><div class="bar-label">12</div></div><div class="bar-item"><div class="bar" style="height: 100%; background-color: #ff9800;"><div class="bar-value">6</div></div><div class="bar-label">43</div></div><div class="bar-item"><div class="bar" style="height: 16.666666666667%; background-color: #5bc2c1;"><div class="bar-value">1</div></div><div class="bar-label">15</div></div></div></div></div></div></div><div class="section"><h2 class="section-title">test3</h2><div class="chart-row"><div class="chart-container"><h3 class="chart-title"></h3><table class="data-table"><tr><th>#</th><th>Estado</th><th>Cantidad</th><th>Tiempo Promedio (Días)</th></tr><tr><td>1</td><td>xc</td><td>1234</td><td>0.00</td></tr></table></div><div class="chart-container"><h3 class="chart-title">Distribución por Estados</h3><div class="donut-container"><div class="donut-chart" style="background: conic-gradient(#3f51b5 0deg 360deg);"><div class="donut-hole">1234</div></div><div class="legend"><div class="legend-item"><div class="legend-color" style="background-color: #3f51b5;"></div><span>xc (1234)</span></div></div></div></div></div></div>    </div>
+</body>
+</html>
