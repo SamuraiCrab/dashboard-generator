@@ -49,28 +49,35 @@ body {
     padding: 0 20px;
 }
 
-/* ===== NAVEGACIÓN ===== */
+/* ===== NAVEGACIÓN FIJA ===== */
 .navbar {
     background-color: var(--secondary-color);
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 60px; /* Altura fija específica */
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 .logo {
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
+    line-height: 1;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .nav-link {
@@ -78,6 +85,8 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    font-size: 0.9rem;
+    line-height: 1;
 }
 
 .nav-link:hover {
@@ -86,8 +95,9 @@ body {
 
 /* ===== CONTENIDO PRINCIPAL ===== */
 .main-content {
-    min-height: calc(100vh - 140px);
-    padding: 2rem 0;
+    padding: 1rem 0;
+    background-color: var(--primary-color);
+    width: 100%;
 }
 
 /* ===== FORMULARIOS ===== */
@@ -429,12 +439,14 @@ body {
 /* ===== FOOTER ===== */
 .footer {
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     text-align: center;
     margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer p {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    margin: 0;
 }

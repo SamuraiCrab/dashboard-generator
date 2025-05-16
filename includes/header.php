@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($page_title) ? $page_title : 'Dashboard Generator'; ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -21,4 +21,4 @@
             </div>
         </div>
     </nav>
-    <main class="main-content"><?php echo $page_title; ?>
+    <main class="main-content">

@@ -582,3 +582,4 @@ const DashboardApp = {
 document.addEventListener('DOMContentLoaded', () => {
     DashboardApp.init();
 });
+
